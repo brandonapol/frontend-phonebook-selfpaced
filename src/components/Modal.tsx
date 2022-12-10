@@ -17,7 +17,7 @@ const Modal = ( props:Props ) => {
           e.stopPropagation();
         }}
         className='max-w-600px w-2/5 fixed
-         flex z-1 mt-40
+         flex z-1 mt-20
         bg-white shadow-xl rounded'
       >
         <div className='w-full flex flex-col'>
@@ -29,15 +29,6 @@ const Modal = ( props:Props ) => {
           </div>
           <div className='flex flex-col items-center text-center mt-3 p-2;'>
             <ContactForm />
-          </div>
-          <div className='flex p-1'>
-            <Button 
-                className='flex justify-start m-3 bg-slate-300 p-2 rounded hover:bg-slate-800 text-white'
-                onClick={props.onClose}
-            >
-              Submit
-            </Button>
-
           </div>
         </div>
       </div>
