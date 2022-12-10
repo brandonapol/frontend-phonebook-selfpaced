@@ -1,1 +1,1 @@
-export * from './fetchData';
+export * from './FetchData';

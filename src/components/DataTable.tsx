@@ -75,8 +75,8 @@ export const DataTable = () => {
             <Button className="p-3 bg-slate-300 m-3 rounded hover:bg-slate-800 hover:text-white" onClick={deleteData}>Delete</Button>
         </div>    
         <div 
-            className={ open? "hidden" : "container mx-10 my-5 flex flex-col"} 
-            style={{ height: 400, width: '100%', zIndex: -1 }}>
+
+            style={{ height: 400, width: '100%' }}>
             <h2 className='p-3 bg-slate-300 my-2 rounded'>My Contacts</h2>
 
 
