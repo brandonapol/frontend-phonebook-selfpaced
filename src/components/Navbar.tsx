@@ -16,7 +16,7 @@ export default function Navbar() {
     return (
         <nav className="flex items-center justify-between flex-wrap bg-teal-500 p-6">
         <div className="flex items-center flex-shrink-0 text-white mr-6">
-            <h1 className="font-semibold text-xl tracking-tight">Digit</h1>
+            <Link to="/" className="font-semibold text-xl tracking-tight">Digit</Link>
         </div>
         <div className="block">
             <button onClick={dropDown} className="flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400 hover:text-white hover:border-white">
@@ -26,25 +26,33 @@ export default function Navbar() {
         { isVisible ? (
         <div className="w-full block flex-grow items-center">
             <div className="text-sm lg:flex-grow">
-            <Button className="p-3 m-5 bg-teal-400">
+            <Button className="p-3 m-5 bg-teal-400 justify-center">
+                <div>
                 <Link to="/" onClick={ clicked } className="flex place-items-center mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
                     Home
                 </Link>
+                </div>
             </Button>
-            <Button className="p-3 m-5 bg-teal-400">
+            <Button className="p-3 m-5 bg-teal-400 justify-center">
+                <div>
                 <Link to="/about" onClick={ clicked } className="flex place-items-center mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
                     About
                 </Link>
+                </div>
             </Button>
-            <Button className="p-3 m-5 bg-teal-400">
+            <Button className="p-3 m-5 bg-teal-400 justify-center">
+                <div>
                 <Link to="/contact" onClick={ clicked } className="flex place-items-center mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white">
                     Contact
                 </Link>
+                </div>
             </Button>
-            <Button className="p-3 m-5 bg-teal-400">
+            <Button className="p-3 m-5 bg-teal-400 justify-center">
+                <div>
                 <Link to="/dashboard" onClick={ clicked } className="flex place-items-center mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white">
                     Dashboard
                 </Link>
+                </div>
             </Button>
             </div>
         </div> ) : (
