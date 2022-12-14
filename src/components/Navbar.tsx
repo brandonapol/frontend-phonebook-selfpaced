@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
 import Button from './Button';
 
-export default function Navbar() {
+export default function Navbar(login: any, logout: any, isLoggedIn:any) {
     const [isVisible, setIsVisible] = useState(false)
 
     const dropDown = () => {
@@ -52,6 +52,11 @@ export default function Navbar() {
                 <Link to="/dashboard" onClick={ clicked } className="flex place-items-center mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white">
                     Dashboard
                 </Link>
+                </div>
+            </Button>
+            <Button onClick={login} className="p-3 m-5 bg-teal-400 justify-center">
+                <div>
+                
                 </div>
             </Button>
             </div>
