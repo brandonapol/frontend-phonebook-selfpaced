@@ -54,11 +54,15 @@ export default function Navbar(login: any, logout: any, isLoggedIn:any) {
                 </Link>
                 </div>
             </Button>
-            <Button onClick={login} className="p-3 m-5 bg-teal-400 justify-center">
-                <div>
-                
-                </div>
-            </Button>
+            { !isLoggedIn ? 
+                <Button onClick={login} className="p-3 m-5 bg-teal-400 justify-center">
+                    Login
+                </Button> 
+            :
+                <Button onClick={logout} className="p-3 m-5 bg-teal-400 justify-center">
+                    Logout
+                </Button>
+            }
             </div>
         </div> ) : (
             <></>
