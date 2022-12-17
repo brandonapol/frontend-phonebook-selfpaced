@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
 import Button from './Button';
 
-export default function Navbar(login: any, logout: any, isLoggedIn:any) {
+export default function Navbar() {
     const [isVisible, setIsVisible] = useState(false)
 
     const dropDown = () => {
@@ -28,7 +28,9 @@ export default function Navbar(login: any, logout: any, isLoggedIn:any) {
             <div className="text-sm lg:flex-grow">
             <Button className="p-3 m-5 bg-teal-400 justify-center">
                 <div>
-                <Link to="/" onClick={ clicked } className="flex place-items-center mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
+                <Link to="/" onClick={ clicked } 
+                className="flex place-items-center mt-4 lg:inline-block lg:mt-0
+                 text-teal-200 hover:text-white mr-4">
                     Home
                 </Link>
                 </div>
@@ -54,15 +56,6 @@ export default function Navbar(login: any, logout: any, isLoggedIn:any) {
                 </Link>
                 </div>
             </Button>
-            { !isLoggedIn ? 
-                <Button onClick={login} className="p-3 m-5 bg-teal-400 justify-center">
-                    Login
-                </Button> 
-            :
-                <Button onClick={logout} className="p-3 m-5 bg-teal-400 justify-center">
-                    Logout
-                </Button>
-            }
             </div>
         </div> ) : (
             <></>

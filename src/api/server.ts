@@ -1,6 +1,6 @@
 export const server_calls = {
     get: async () => {
-        const response = await fetch(`http://127.0.0.1:5000/api/contacts`,
+        const response = await fetch(`https://plankton-app-46k8b.ondigitalocean.app/api/contacts`,
         {
             method: 'GET',
             mode: "cors",
@@ -14,7 +14,7 @@ export const server_calls = {
     },
 
     create: async(data: any = {}) => {
-        const response = await fetch(`http://127.0.0.1:5000/api/contacts`,{
+        const response = await fetch(`https://plankton-app-46k8b.ondigitalocean.app/api/contacts`,{
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -29,7 +29,7 @@ export const server_calls = {
         return await response.json()
     },
     update: async (id:string, data:any = {}) => {
-        const response = await fetch(`http://127.0.0.1:5000/api/contacts/${id}`, {
+        const response = await fetch(`https://plankton-app-46k8b.ondigitalocean.app/api/contacts/${id}`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

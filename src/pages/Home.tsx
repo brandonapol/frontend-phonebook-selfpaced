@@ -1,10 +1,8 @@
 import React, { useState } from 'react'
-import Navbar from '../components/Navbar'
-import Button from '../components/Button'
+
 import Background from '../assets/images/willian-justen-de-vasconcellos-jUCQRQeRs3k-unsplash.jpg'
 
 export default function Home() {
-    const [isLoggedIn, setIsLoggedIn] = useState()
 
     return (
       <div style={{ backgroundImage: `url(${ Background })` }} className="flex flex-row justify-center mx-auto bg-cover bg-fixed">
