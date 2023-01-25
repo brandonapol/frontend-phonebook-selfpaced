@@ -1,9 +1,24 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
 import Button from './Button';
+import { signInWithPopup, signOut } from 'firebase/auth';
+import { auth, Providers } from "../config/firebase";
 
 export default function Navbar() {
     const [isVisible, setIsVisible] = useState(false)
+    const [loggedIn, setIsLoggedIn] = useState(false);
+
+    const signOutOnClick = () => {
+        signOut(auth)
+        location.reload();
+    }
+
+    const signInOnClick = async () => {
+        const response = await signInWithPopup(auth, Providers.google);
+        if ( response.user ) {
+            location.reload();
+        }
+    }
 
     const dropDown = () => {
         setIsVisible(!isVisible)
@@ -56,6 +71,23 @@ export default function Navbar() {
                 </Link>
                 </div>
             </Button>
+            { !auth.currentUser ? 
+            <Button className="p-3 m-5 bg-teal-400 justify-center">
+                <div>
+                    
+                <Link to="/" onClick={ () => signInOnClick() } className="flex place-items-center mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white">
+                    Login
+                </Link>
+                </div>
+            </Button>
+             :
+             <Button className="p-3 m-5 bg-teal-400 justify-center">
+                <div>
+                <Link to="/" onClick={ () => signOutOnClick() } className="flex place-items-center mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white">
+                    Sign Out
+                </Link>
+                </div>
+            </Button> }
             </div>
         </div> ) : (
             <></>
